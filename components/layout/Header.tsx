@@ -14,7 +14,6 @@ export default function Header() {
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Close mobile menu when screen size changes to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -78,7 +77,6 @@ export default function Header() {
     closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
   }
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden"
@@ -106,13 +104,12 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <Image
-              src="https://cdn.prod.website-files.com/65477692addfee239dda0d4f/65777bfb571621ea0ddb86ea_Logotype1-p-500.png"
-              alt="Adamant Code"
-              width={150}
-              height={32}
-              className="h-8 w-auto"
-            />
+           <Link href="/" className="flex items-center gap-2">
+            <span className="text-xl font-semibold flex items-center">
+              Adamant<Image src="/logo.svg" alt="Adamant Code" width={32} height={32} className="h-8 w-auto" />
+              <span className="text-primary">Code</span>
+            </span>
+          </Link>
           </motion.span>
         </Link>
 

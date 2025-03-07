@@ -20,13 +20,12 @@ export default function Footer() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <Image
-              src="https://cdn.prod.website-files.com/65477692addfee239dda0d4f/65777bfb571621ea0ddb86ea_Logotype1-p-500.png"
-              alt="Adamant Code"
-              width={120}
-              height={30}
-              className="h-6 w-auto"
-            />
+             <Link href="/" className="flex items-center gap-2">
+            <span className="text-xl font-semibold flex items-center">
+              Adamant<Image src="/logo.svg" alt="Adamant Code" width={32} height={32} className="h-8 w-auto" />
+              <span className="text-primary">Code</span>
+            </span>
+          </Link>
           </motion.div>
           <motion.div
             className="text-sm text-muted-foreground"
